@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>NoProcrastinationClub</title>
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Press+Start+2P&family=Montserrat:wght@300;400;500;700;900&display=swap');
+
+/* Science Gothic not on Google Fonts — use Montserrat 900 as closest match */
+/* body reset */
+body, h1, h2, h3, p, ul, li {
+	margin: 0;
+	padding: 0;
+	hyphens: none;
+	word-break: normal;
+}
+
+/* shared font for main headings — Montserrat Black mimics Science Gothic */
+.sci { font-family: 'Montserrat', sans-serif; font-weight: 900; }
+.pixel { font-family: 'Press Start 2P', monospace; }
+.mono { font-family: 'Press Start 2P', monospace; }
+
+/* ─────────────────────────────────
+   NAV — solid #D842F1 bar
+───────────────────────────────── */
+nav {
+	background: #D842F1;
+	padding: 14px 32px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+	box-sizing: border-box;
+}
+.nav-logo {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 15px;
+	color: white;
+	text-decoration: none;
+	letter-spacing: 0.5px;
+}
+
+/* ─────────────────────────────────
+   PAGE 1 — HERO (dark, NO dome)
+───────────────────────────────── */
+.pg1 {
+	background: #161616;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 80px 40px 60px;
+	position: relative;
+}
+.pg1-content {
+	position: relative;
+	z-index: 2;
+}
+.pg1 h1 {
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 900;
+	font-size: 64px;
+	text-transform: uppercase;
+	color: white;
+	line-height: 1.05;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+.pg1-sub {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	color: rgba(255,255,255,0.65);
+	margin-bottom: 36px;
+}
+.pg1-rings {
+	width: 190px;
+	display: block;
+	margin: 0 auto;
+}
+
+/* ─────────────────────────────────
+   PAGE 2 — RUGBY OVAL
+───────────────────────────────── */
+.pg2 {
+	background: #161616;
+	padding: 60px 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.pg2-oval {
+	background: #D842F1;
+	width: 92%;
+	max-width: 1200px;
+	height: 560px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 160px;
+	text-align: center;
+}
+.pg2-oval p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 34px;
+	color: white;
+	line-height: 1.5;
+}
+
+/* ─────────────────────────────────
+   PAGE 3 — PANIC IS MY CARDIO
+───────────────────────────────── */
+.pg3 {
+	background: #161616;
+	min-height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 40px;
+}
+.pg3-inner {
+	text-align: center;
+	max-width: 700px;
+}
+.pg3-top {
+	font-family: 'Press Start 2P', monospace;
+	font-size: 30px;
+	color: white;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	margin-bottom: 32px;
+	display: block;
+}
+.pg3-meme {
+	width: 500px;
+	margin: 0 auto 24px;
+	display: block;
+}
+.pg3-meme img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.pg3-bottom {
+	font-family: 'Press Start 2P', monospace;
+	font-size: 72px;
+	color: white;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	display: block;
+}
+
+/* ─────────────────────────────────
+   PAGE 4 — IS PROCRASTINATION A TALENT
+───────────────────────────────── */
+.pg4 {
+	background: #161616;
+	min-height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 40px;
+	text-align: center;
+}
+.pg4-inner { max-width: 800px; }
+.pg4 h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 44px;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 3px;
+	line-height: 1.2;
+	margin-bottom: 8px;
+}
+.pg4 h2 span { color: #D842F1; font-weight: 900; }
+.pg4-talent {
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 900;
+	font-size: 96px;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 2px;
+	line-height: 1;
+	margin-bottom: 48px;
+	display: block;
+}
+/* pie chart */
+.pie-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 32px;
+}
+.pie {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: conic-gradient(#D842F1 0deg 340deg, #161616 340deg 360deg);
+	margin-bottom: 20px;
+}
+.pie-legend {
+	display: flex;
+	align-items: center;
+	gap: 36px;
+	justify-content: center;
+}
+.legend-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 13px;
+	color: white;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.dot-empty {
+	width: 18px; height: 18px;
+	border-radius: 50%;
+	border: 2px solid rgba(255,255,255,0.5);
+}
+.dot-fill {
+	width: 18px; height: 18px;
+	border-radius: 50%;
+	background: #D842F1;
+}
+.definitely-no {
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 900;
+	font-size: 52px;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	display: block;
+}
+
+/* ─────────────────────────────────
+   PAGE 5 — THE STORY (procrastination process)
+───────────────────────────────── */
+.pg5 {
+	background: #161616;
+	min-height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 40px;
+	text-align: center;
+}
+.pg5-inner { max-width: 800px; }
+.pg5 p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 34px;
+	color: white;
+	line-height: 1.5;
+	margin-bottom: 40px;
+}
+.pg5 p span { color: #D842F1; }
+.pg5-meme {
+	width: 500px;
+	margin: 0 auto;
+	display: block;
+}
+.pg5-meme img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* ─────────────────────────────────
+   PAGE 6 — AN ASSIGNMENT COMES IN
+───────────────────────────────── */
+.pg6 {
+	background: #161616;
+	min-height: auto;
+	padding: 60px 80px;
+}
+.pg6-inner {
+	max-width: 900px;
+	margin: auto;
+}
+.pg6-top {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 40px;
+	color: white;
+	margin-bottom: 4px;
+	display: block;
+}
+.pg6-underline {
+	display: block;
+	margin-bottom: 48px;
+}
+.pg6-underline svg { width: 200px; height: 18px; }
+/* two column row — meme left, text right */
+.pg6-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+}
+.pg6-meme {
+	width: 300px;
+	flex-shrink: 0;
+}
+.pg6-meme img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.pg6-text {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 36px;
+	color: white;
+	line-height: 1.4;
+	text-align: right;
+}
+.pg6-text span { color: #D842F1; }
+
+/* ─────────────────────────────────
+   PAGE 7 — DOOMSCROLLING + 9PM SPRINT
+───────────────────────────────── */
+.pg7 {
+	background: #161616;
+	min-height: auto;
+	padding: 60px 80px;
+}
+.pg7-inner {
+	max-width: 900px;
+	margin: auto;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+}
+.pg7-line {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 36px;
+	color: white;
+	line-height: 1.4;
+}
+.pg7-line span { color: #D842F1; }
+.pg7-line-right {
+	text-align: right;
+}
+
+/* ─────────────────────────────────
+   PAGE 8 — 11:59 PM MIRACLE
+───────────────────────────────── */
+.pg8 {
+	background: #161616;
+	min-height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 40px;
+	text-align: center;
+}
+.pg8-inner { max-width: 800px; }
+.pg8-top {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 40px;
+	color: white;
+	line-height: 1.4;
+	margin-bottom: 36px;
+	display: block;
+}
+.pg8-top span { color: #D842F1; }
+.pg8-meme {
+	width: 480px;
+	margin: 0 auto;
+	display: block;
+}
+.pg8-meme img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* ─────────────────────────────────
+   PAGE 9 — WHY PROCRASTINATION DOESN'T WORK
+───────────────────────────────── */
+.pg9 {
+	background: #161616;
+	min-height: auto;
+	padding: 60px 80px;
+}
+.pg9-inner { max-width: 900px; margin: auto; }
+.pg9 h2 {
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 400;
+	font-size: 52px;
+	color: white;
+	line-height: 1.2;
+	margin-bottom: 60px;
+	text-align: center;
+}
+.pg9 h2 span { color: #D842F1; }
+.pg9-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+}
+.pg9-item-title {
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 400;
+	font-size: 28px;
+	color: #D842F1;
+	margin-bottom: 10px;
+	display: block;
+}
+.pg9-item-body {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	color: rgba(255,255,255,0.7);
+	line-height: 1.6;
+}
+.pg9-right { text-align: right; }
+
+/* ─────────────────────────────────
+   PAGE 10 — THE SOLUTION IS SIMPLE (staggered carousel)
+───────────────────────────────── */
+.pg10 {
+	background: #161616;
+	min-height: auto;
+	padding: 60px 0;
+	overflow: hidden;
+}
+.pg10-title {
+	font-family: 'Press Start 2P', monospace;
+	font-size: 32px;
+	color: white;
+	line-height: 1.5;
+	text-align: center;
+	margin-bottom: 48px;
+	padding: 0 40px;
+}
+/* each row scrolls at different speed and direction */
+.pg10-row {
+	overflow: hidden;
+	margin-bottom: 4px;
+}
+.pg10-track {
+	display: flex;
+	white-space: nowrap;
+	font-family: 'Press Start 2P', monospace;
+	font-size: 16px;
+	color: white;
+	line-height: 2;
+}
+.pg10-track span { padding: 0 20px; }
+.pg10-track-1 { animation: scrollLeft 18s linear infinite; }
+.pg10-track-2 { animation: scrollRight 22s linear infinite; }
+.pg10-track-3 { animation: scrollLeft 15s linear infinite; }
+.pg10-track-4 { animation: scrollRight 20s linear infinite; }
+.pg10-track-5 { animation: scrollLeft 25s linear infinite; }
+.pg10-track-6 { animation: scrollRight 17s linear infinite; }
+@keyframes scrollLeft {
+	from { transform: translateX(0); }
+	to   { transform: translateX(-50%); }
+}
+@keyframes scrollRight {
+	from { transform: translateX(-50%); }
+	to   { transform: translateX(0); }
+}
+
+/* ─────────────────────────────────
+   PAGE 11 — BECOME PART OF THE MOVEMENT
+───────────────────────────────── */
+.pg11 {
+	background: #161616;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+}
+/* full bleed meme background */
+.pg11-bg {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.pg11-card {
+	position: relative;
+	z-index: 2;
+	background: white;
+	border-radius: 40px;
+	padding: 60px 80px;
+	max-width: 720px;
+	text-align: center;
+}
+.pg11-card h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 40px;
+	color: #161616;
+	line-height: 1.3;
+	margin-bottom: 20px;
+}
+.pg11-card p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	color: #444;
+	line-height: 1.6;
+}
+
+/* ─────────────────────────────────
+   PAGE 12 — DELAY. PANIC. START. BREATH. FINISH.
+───────────────────────────────── */
+.pg12 {
+	background: #161616;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 40px;
+	text-align: center;
+}
+.pg12-inner { max-width: 900px; }
+.pg12-crossed {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 36px;
+	color: rgba(255,255,255,0.5);
+	text-decoration: line-through;
+	text-decoration-color: #D842F1;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	display: block;
+}
+.pg12-main {
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 900;
+	font-size: 72px;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 2px;
+	line-height: 1;
+	display: block;
+}
+.pg12-main span { color: #D842F1; }
+
+/* ─────────────────────────────────
+   PAGE 13 — START SMALL START UGLY
+───────────────────────────────── */
+.pg13 {
+	background: #161616;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 40px;
+	text-align: center;
+}
+.pg13-inner { max-width: 700px; }
+.pg13-sub {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	color: rgba(255,255,255,0.55);
+	margin-bottom: 32px;
+	display: block;
+}
+.pg13-main {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 52px;
+	color: white;
+	line-height: 1.3;
+}
+/* pill border around "small" and "ugly" */
+.pg13-main .pill {
+	border: 2px solid #D842F1;
+	border-radius: 40px;
+	padding: 0 16px;
+	color: white;
+}
+.pg13-main .pink { color: #D842F1; }
+
+/* ─────────────────────────────────
+   RESPONSIVE
+───────────────────────────────── */
+@media (max-width: 768px) {
+	.pg1 h1 { font-size: 36px; }
+	.pg2-oval { height: auto; padding: 60px 40px; border-radius: 200px; }
+	.pg2-oval p { font-size: 22px; }
+	.pg3-top { font-size: 18px; }
+	.pg3-bottom { font-size: 40px; }
+	.pg3-meme, .pg5-meme, .pg8-meme { width: 90%; }
+	.pg4-talent { font-size: 60px; }
+	.pg4 h2 { font-size: 28px; }
+	.pg5 p { font-size: 22px; }
+	.pg6-row { flex-direction: column; }
+	.pg6-meme { width: 80%; }
+	.pg7-line { font-size: 24px; }
+	.pg7-line-right { text-align: left; }
+	.pg8-top { font-size: 26px; }
+	.pg9 h2 { font-size: 34px; }
+	.pg9-list li { font-size: 20px; }
+	.pg9-list li:nth-child(2) { padding-left: 0; }
+	.pg9-list li:nth-child(3) { text-align: left; }
+	.pg10 h2 { font-size: 22px; }
+	.pg11-card { padding: 40px 24px; margin: 24px; }
+	.pg11-card h2 { font-size: 28px; }
+	.pg12-main { font-size: 44px; }
+	.pg13-main { font-size: 36px; }
+}
+	</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+	<a href="#" class="nav-logo">NoProcrastinationClub©</a>
+</nav>
+
+<!-- PAGE 1: HERO -->
+<section class="pg1">
+	<div class="pg1-content">
+		<h1>IMAGINE A WORLD WHERE<br>PROCRASTINATION<br>IS A SPORT</h1>
+		<p class="pg1-sub">A world where students train for deadlines like athletes.</p>
+		<img src="gambar1.png" alt="Olympic rings" class="pg1-rings">
+	</div>
+</section>
+
+<!-- PAGE 2: RUGBY OVAL -->
+<section class="pg2">
+	<div class="pg2-oval">
+		<p>We've all been there, promising ourselves we'll start early, only to begin when the deadline starts breathing down our neck.</p>
+	</div>
+</section>
+
+<!-- PAGE 3: PANIC IS MY CARDIO -->
+<section class="pg3">
+	<div class="pg3-inner">
+		<span class="pg3-top">PANIC IS MY</span>
+		<div class="pg3-meme">
+			<img src="meme1.gif" alt="Panic meme">
+		</div>
+		<span class="pg3-bottom">CARDIO</span>
+	</div>
+</section>
+
+<!-- PAGE 4: IS PROCRASTINATION A TALENT -->
+<section class="pg4">
+	<div class="pg4-inner">
+		<h2>IS <span>PROCRASTINATION</span> IS A</h2>
+		<span class="pg4-talent">TALENT?</span>
+		<div class="pie-wrap">
+			<div class="pie"></div>
+			<div class="pie-legend">
+				<div class="legend-item">
+					<div class="dot-empty"></div>
+					<span>NO</span>
+				</div>
+				<div class="legend-item">
+					<div class="dot-fill"></div>
+					<span>DEFINITELY NO</span>
+				</div>
+			</div>
+		</div>
+		<span class="definitely-no">DEFINITELY NO.</span>
+	</div>
+</section>
+
+<!-- PAGE 5: THE STORY (procrastination process) -->
+<section class="pg5">
+	<div class="pg5-inner">
+		<p>The <span>procrastination</span> process has been trained into student life for years, so I'm sure you're familiar with the story.</p>
+		<div class="pg5-meme">
+			<img src="meme2.gif" alt="Typing meme">
+		</div>
+	</div>
+</section>
+
+<!-- PAGE 6: AN ASSIGNMENT COMES IN -->
+<section class="pg6">
+	<div class="pg6-inner">
+		<span class="pg6-top">An assignment comes in.</span>
+		<!-- squiggly underline in purple -->
+		<span class="pg6-underline">
+			<svg viewBox="0 0 200 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M2 12 Q20 2 38 12 Q56 22 74 12 Q92 2 110 12 Q128 22 146 12 Q164 2 182 12 Q196 18 198 14" stroke="#D842F1" stroke-width="3" stroke-linecap="round" fill="none"/>
+			</svg>
+		</span>
+		<div class="pg6-row">
+			<div class="pg6-meme">
+				<img src="meme3.gif" alt="Relaxing meme">
+			</div>
+			<p class="pg6-text">You tell yourself,<br><span>"I still have time"</span></p>
+		</div>
+	</div>
+</section>
+
+<!-- PAGE 7: DOOMSCROLLING + 9PM SPRINT -->
+<section class="pg7">
+	<div class="pg7-inner">
+		<p class="pg7-line">You doomscrolling and<br>call it research.</p>
+		<p class="pg7-line pg7-line-right">You enter the 9PM sprint<br>and <span>panic.</span></p>
+	</div>
+</section>
+
+<!-- PAGE 8: 11:59 PM MIRACLE -->
+<section class="pg8">
+	<div class="pg8-inner">
+		<span class="pg8-top">At 11:59 PM, you submit and<br>call it a <span>miracle.</span></span>
+		<div class="pg8-meme">
+			<img src="meme4.gif" alt="Its a miracle meme">
+		</div>
+	</div>
+</section>
+
+<!-- PAGE 9: WHY PROCRASTINATION DOESN'T WORK -->
+<section class="pg9">
+	<div class="pg9-inner">
+		<h2>Why <span>procrastination</span><br>doesn't work?</h2>
+		<ul class="pg9-list">
+			<li>
+				<span class="pg9-item-title">It turns learning into survival</span>
+				<span class="pg9-item-body">You are no longer learning calmly.<br>You are simply trying to make it out alive before 11:59 PM.</span>
+			</li>
+			<li class="pg9-right">
+				<span class="pg9-item-title">It steals your recovery time</span>
+				<span class="pg9-item-body">Even when the task is submitted, the cost remains.<br>Less sleep, more stress, and barely any energy left for what comes next</span>
+			</li>
+			<li>
+				<span class="pg9-item-title">It makes panic feel productive</span>
+				<span class="pg9-item-body">The pressure feels powerful, but that doesn't mean it works.<br>Panic creates urgency, not quality.</span>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<!-- PAGE 10: THE SOLUTION IS SIMPLE -->
+<section class="pg10">
+	<p class="pg10-title">THE SOLUTION IS<br>SIMPLE</p>
+	<div class="pg10-row"><div class="pg10-track pg10-track-1"><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span></div></div>
+	<div class="pg10-row"><div class="pg10-track pg10-track-2"><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span></div></div>
+	<div class="pg10-row"><div class="pg10-track pg10-track-3"><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span></div></div>
+	<div class="pg10-row"><div class="pg10-track pg10-track-4"><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span></div></div>
+	<div class="pg10-row"><div class="pg10-track pg10-track-5"><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span></div></div>
+	<div class="pg10-row"><div class="pg10-track pg10-track-6"><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span><span>Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. Stop training for panic. </span></div></div>
+</section>
+
+<!-- PAGE 11: BECOME PART OF THE MOVEMENT -->
+<section class="pg11">
+	<img src="meme5.gif" alt="Minions background" class="pg11-bg">
+	<div class="pg11-card">
+		<h2>Become part of the movement.<br>It's free to retire.</h2>
+		<p>Stop treating last minute panic like a personality.<br>Join the Procrastination Olympics retirement club</p>
+	</div>
+</section>
+
+<!-- PAGE 12: DELAY. PANIC. START. BREATH. FINISH. -->
+<section class="pg12">
+	<div class="pg12-inner">
+		<span class="pg12-crossed">DELAY. PANIC.</span>
+		<span class="pg12-main">START. BREATH. <span>FINISH.</span></span>
+	</div>
+</section>
+
+<!-- PAGE 13: START SMALL START UGLY -->
+<section class="pg13">
+	<div class="pg13-inner">
+		<span class="pg13-sub">Together, we can retire from panic</span>
+		<p class="pg13-main">
+			Start <span class="pill">small</span> Start <span class="pill">ugly</span><br>
+			Start before <span class="pink">midnight.</span>
+		</p>
+	</div>
+</section>
+
+</body>
+</html>
